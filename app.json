@@ -1,0 +1,13 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/detail/detail"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#f60",
+    "navigationBarTitleText": "附近免费WIFI查询",
+    "navigationBarTextStyle":"white"
+  },
+  "debug":true
+}

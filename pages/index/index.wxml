@@ -1,0 +1,34 @@
+<!--index.wxml-->
+<button type="primary"  bindtap="updatelocation" class="btnUpdateLocation"> 刷新 </button>
+<view class="cod-list">
+<text class = "title_locati">当前位置经纬度</text>
+<block wx:if="{{hasLocation === false}}">
+    <text >未获取</text>
+</block>
+<block wx:if="{{hasLocation === true}}">
+    <text>经度: {{longstr}}</text>
+    <text>纬度: {{latstr}}</text>
+</block>
+</view>
+<button type="primary"  bindtap="querywifi" class="btnQuery"> 查询当前附近免费WIFI </button>
+
+
+<view class="news-list">
+<text>{{no_wifi}}</text>
+  <block wx:for="{{wifiInfos}}">
+    <view class="news-item" data-intro="{{item.intro}}" data-address="{{item.address}}" data-baidu_lat="{{item.baidu_lat}}" data-baidu_lon="{{item.baidu_lon}}" bindtap="bindViewTap">
+      <view class="news-text">
+        <text class="news-title">{{index + 1}}、WIFI名称：{{item.name}}</text>
+        <view class="news-stamp">
+          <text class = "swiper-image">说明：{{item.intro}}</text>
+        </view>
+        <view class="news-stamp">
+          <text class = "swiper-image">距离：{{item.distance}}米</text>
+        </view>
+        <view class="news-stamp">
+          <text class = "swiper-image">详细地址：{{item.address}}</text>
+        </view>
+      </view>
+    </view>
+  </block>
+</view>
